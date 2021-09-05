@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Задание
+Есть сущности Author, Book, Publisher, BookShop
 
-Things you may want to cover:
+Бизнес логика:
+ ◦ Author имеет возможность написать несколько книг
+ ◦ Book может иметь множество авторов
+ ◦ Book всегда издается под одним издательством (Publisher)
+ ◦ Publisher может издавать множество книг
+ ◦ Publisher может иметь партнёрство с множеством магазинов (BookShop) по продаже книг
+ ◦ BookShop продаёт множество книг от множества Publisher
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Необходимо:
+1) Создать соответствующие таблицы в БД (через миграции). Обязательными полями в таблицах должны быть наименования для каждой сущности (поле Name)
+2) Добавить в приложение необходимые модели и подобрать, подходящие под их условия, ассоциации между этими моделями
+3) К моделям добавить валидации, которые будут проверять условия соблюдения бизнес логики (уникальность)
+4) Очень часто необходимо знать информацию о магазинах, где продается определенная книга автора. Нужно получать список BookShop, зная только книгу (из модели BookShop), - через scope
